@@ -5,6 +5,9 @@
 #define SIZE_BUFFER 260
 #define PATH L"C:/TestAPI/TEST.txt"
 
+typedef int(_cdecl* MyFunction)(LPWSTR);
+typedef int(_cdecl* MyFunctionArifm)(int, int);
+/*
 INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow) {
 
 	int bool = 0;
@@ -52,5 +55,31 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 
 	CloseHandle(hFile);
 	return 0;
+	
+	}
+	*/
+
+
+	
+
+
+
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevIncstance,
+		LPSTR lpCmdLine, int nCmdShow){
+
+		HINSTANCE hMyDLL;
+		if ((hMyDLL = LoadLibrary(PATH)) == NULL) return 1;
+		MyFunction myFun = (MyFunction)GetProcAddress(hMyDLL, "MyFunc");
+		myFun(L"Harosh");
+
+		MyFunctionArifm myFunSumm = (MyFunctionArifm)GetProcAddress(hMyDLL, "Summ");
+		int s = myFunSumm(21, 54);
+
+		MyFunctionArifm myFunRazn = (MyFunctionArifm)GetProcAddress(hMyDLL, "Razn");
+		int r = myFunRazn(50, 23);
+
+		FreeLibrary(hMyDLL);
+		return 0;
 
 }
