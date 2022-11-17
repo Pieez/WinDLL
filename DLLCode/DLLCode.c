@@ -3,9 +3,10 @@
 #include <stdio.h>
 #include <vector>
 
-BOOL WINAPI DllMain(HINSTANCE hlnstDLL, DWORD fdwReason, LPVOID IpReserved) {
+#include "stdafx.h"
 
-	BOOL bAllWenrWell = TRUE;
+
+	/*BOOL bAllWenrWell = TRUE;
 
 	switch (fdwReason)
 	{
@@ -26,7 +27,14 @@ BOOL WINAPI DllMain(HINSTANCE hlnstDLL, DWORD fdwReason, LPVOID IpReserved) {
 
 		return FALSE;
 
-}
+}*/
+
+	BOOL  APIENTRY bAllWenrWell(HMODULE hModule,
+		DWORD ul_reason_for_call,
+		LPVOID lpReserved)
+	{
+		return TRUE;
+	}
 
  __declspec(dllimport) int MyFunc(LPWSTR str);
 int MyFunc(LPWSTR str) {
@@ -42,8 +50,8 @@ int Summ(int a, int b) {
 	return a + b;
 }
 
-__declspec(dllimport) int Razn(int a, int b)
+__declspec(dllimport) int Razn(int a, int b);
 int Razn(int a, int b) {
 
-	return a-b
+	return a - b;
 }

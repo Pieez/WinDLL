@@ -3,7 +3,8 @@
 #include <string.h>
 
 #define SIZE_BUFFER 260
-#define PATH L"C:/TestAPI/TEST.txt"
+#define PATH L"C:/TestAPI/TEST1.docx"
+#define LIB L"DLLCode.dll"
 
 typedef int(_cdecl* MyFunction)(LPWSTR);
 typedef int(_cdecl* MyFunctionArifm)(int, int);
@@ -69,7 +70,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevIncstance,
 		LPSTR lpCmdLine, int nCmdShow){
 
 		HINSTANCE hMyDLL;
-		if ((hMyDLL = LoadLibrary(PATH)) == NULL) return 1;
+		if ((hMyDLL = LoadLibrary(LIB)) == NULL) return 1;
 		MyFunction myFun = (MyFunction)GetProcAddress(hMyDLL, "MyFunc");
 		myFun(L"Harosh");
 
