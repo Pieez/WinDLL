@@ -1,13 +1,13 @@
-﻿#include <Windows.h>
-#include <stdio.h>
-#include <string.h>
-
-#define SIZE_BUFFER 260
-#define PATH L"C:/TestAPI/TEST1.docx"
-#define LIB L"DLLCode.dll"
-
-typedef int(_cdecl* MyFunction)(LPWSTR);
-typedef int(_cdecl* MyFunctionArifm)(int, int);
+﻿//#include <Windows.h>
+//#include <stdio.h>
+//#include <string.h>
+//
+//#define SIZE_BUFFER 260
+//#define PATH L"C:/TestAPI/TEST1.docx"
+//#define LIB L"DLLCode.dll"
+//
+//typedef int(_cdecl* MyFunction)(LPWSTR);
+//typedef int(_cdecl* MyFunctionArifm)(int, int);
 /*
 INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow) {
 
@@ -66,21 +66,21 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 
 
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevIncstance,
-		LPSTR lpCmdLine, int nCmdShow){
-
-		HINSTANCE hMyDLL;
-		if ((hMyDLL = LoadLibrary(LIB)) == NULL) return 1;
-		MyFunction myFun = (MyFunction)GetProcAddress(hMyDLL, "MyFunc");
-		myFun(L"Harosh");
-
-		MyFunctionArifm myFunSumm = (MyFunctionArifm)GetProcAddress(hMyDLL, "Summ");
-		int s = myFunSumm(21, 54);
-
-		MyFunctionArifm myFunRazn = (MyFunctionArifm)GetProcAddress(hMyDLL, "Razn");
-		int r = myFunRazn(50, 23);
-
-		FreeLibrary(hMyDLL);
-		return 0;
-
-}
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevIncstance,
+//		LPSTR lpCmdLine, int nCmdShow){
+//
+//		HINSTANCE hMyDLL;
+//		if ((hMyDLL = LoadLibrary(LIB)) == NULL) return 1;
+//		MyFunction myFun = (MyFunction)GetProcAddress(hMyDLL, "MyFunc");
+//		myFun(L"Harosh");
+//
+//		MyFunctionArifm myFunSumm = (MyFunctionArifm)GetProcAddress(hMyDLL, "Summ");
+//		int s = myFunSumm(21, 54);
+//
+//		MyFunctionArifm myFunRazn = (MyFunctionArifm)GetProcAddress(hMyDLL, "Razn");
+//		int r = myFunRazn(50, 23);
+//
+//		FreeLibrary(hMyDLL);
+//		return 0;
+//
+//}

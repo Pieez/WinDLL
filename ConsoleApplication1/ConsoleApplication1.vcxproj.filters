@@ -18,6 +18,15 @@
     <ClCompile Include="ConsoleApplication1.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="DLLMain.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="DllLib.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Source.def">
